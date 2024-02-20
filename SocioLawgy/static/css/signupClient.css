@@ -1,0 +1,128 @@
+body {
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    flex-direction: column; /* Stack header and main content vertically */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 1em; /* Add some padding */
+}
+
+.logo img {
+    max-height: 100px; /* Adjust to your logo's size */
+    width: auto;
+}
+
+.main-content {
+    flex: 1; /* Take up all available space */
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(175, 210, 203);;
+    padding: 1em;
+    justify-content: center; /* Center the form horizontally */
+    align-items: center; /* Center the form vertically */
+}
+
+.form-container {
+    margin-top: 8%;
+    width: 50%; /* Adjust width as needed */
+    background-color: #ffffff;
+    padding: 1em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px; /* Optional: adds rounded corners */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 0.5em;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="submit"] {
+    margin-bottom: 1em;
+    padding: 0.5em;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.password-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em; /* Adjust as needed */
+  }
+
+  .password-container input[type="password"],
+  .password-container input[type="text"] { /* Add input[type="text"] for when the password is visible */
+    flex-grow: 1;
+    padding: 0.5em;
+    margin-right: 0.5em; /* Spacing between the input field and the button */
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+  }
+
+  .password-container button {
+    padding: 0.5em;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .form-group {
+    display: flex;
+    margin-bottom: 1em;
+    align-items: center;
+}
+
+.form-group label {
+    width: 20%; /* Adjust the width as needed */
+    min-width: 100px; /* Adjust the min-width as needed */
+    text-align: left;
+    margin-right: 1em;
+}
+
+.form-group input,
+.form-group select {
+    width: 80%; /* Adjust the width as needed */
+    padding: 0.5em;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    flex-grow: 1;
+}
+
+.password-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.password-container {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+}
+
+.password-container input[type="password"],
+.password-container input[type="text"] {
+    flex-grow: 1;
+    margin-right: 0.5em;
+}

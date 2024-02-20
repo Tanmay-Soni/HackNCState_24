@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <title>SocioLawgy: Case Details</title>
+</head>
+
+<body style="background-color: rgb(175, 210, 203); font-family: 'Times New Roman', Times, serif;">
+
+    <div class="row" style="background-color: white">
+        <div class="logo">
+            <img src="../static/images/fullLogo.png" alt="Law - Tools of Argument" style="height: 150px;">
+        </div>
+    </div>
+
+    <form action="/registerCase/{{client.id}}" method="POST">
+        <div class="row m-3">
+            <h2 class="ps-3 pe-3">Add Case Details</h2>
+
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+            </div>
+
+            <div class="form-group">
+                <label for="case_type h-5">Case Type:</label>
+                <select id="case_type" name="case_type" required>
+                    <option value="">Choose an option</option>
+                    <option value="Property Crimes">Property Crimes</option>
+                    <option value="Violent Crimes">Violent Crimes</option>
+                    <option value="Traffic Violations">Traffic Violations</option>
+                    <option value="Domestic Violence">Domestic Violence</option>
+                    <option value="Hate Crimes">Hate Crimes</option>
+                </select>
+                <a href="/help">Need Help?</a>
+            </div>
+            <div class="row mt-3 ps-3 pe-3">
+                <div class="col">
+                    <h5>Case Description</h5>
+                    <div class="mb-3 form-group">
+                        <textarea class="form-control" name="case_description" rows="5"></textarea>
+                    </div>
+                </div>
+                <div class="col">
+                    <h5>Summary</h5>
+                    <div class="mb-3 form-group">
+                        <textarea class="form-control" name="case_summary" rows="5"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3 ps-3 pe-3 justify-content-center">
+                <input type="submit" class="btn btn-primary"></input>
+            </div>
+        </div>
+    </form>
+
+    <script>
+        const textAreas = document.querySelectorAll('textarea');
+        const submitButton = document.getElementById('submitButton');
+
+        submitButton.disabled = true;
+
+        textAreas.forEach(textArea => {
+            textArea.addEventListener('input', checkTextAreas);
+        });
+
+        function checkTextAreas() {
+            const allFilled = Array.from(textAreas).every(textArea => textArea.value.trim() !== '');
+            submitButton.disabled = !allFilled;
+        }
+    </script>
+</body>
+
+</html>

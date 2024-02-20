@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* This ensures vertical centering */
+    background-color: #ffffff;
+    height: 20vh; /* Use viewport heights for consistency */
+}
+
+.logo img {
+    height: 150px;
+    width: auto; /* This will maintain the aspect ratio */
+}
+
+.body {
+    display: flex; /* This makes .body a flex container */
+    flex-direction: row; /* Arranges children (columns) in a row */
+    height: 80vh; /* Occupies the remaining height */
+}
+
+.body-text {
+    flex: 1; /* Each .body-text container will take up an equal amount of space */
+    padding: 20px;
+    border: 50px solid rgb(180, 180, 180);
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+    display: flex; /* Make the .body-text a flex container */
+    flex-direction: column; /* Stack child elements vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    height: 100%; /* Ensure it fills the parent .body container */
+}
+
+#left-column, #right-column {
+    background-color: rgb(175, 210, 203);
+}
+
+.button-container {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .login-btn, .signup-btn {
+    padding: 10px 30px;
+    margin: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: #556458;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+    transition: background-color 0.3s ease;
+  }
+  
+  .login-btn:hover, .signup-btn:hover{
+    background-color: #c7e8ca;
+    
+  }
